@@ -1,0 +1,9 @@
+osrm:
+  prague:
+    base_url: https://api.fuzee.cz/v2/routing/prague/CAR/matrix
+    service: table
+    version: v1
+  czechia:
+    base_url: http://osrm.godeliver.co/table/v1/car
+    service: table
+    version: v1

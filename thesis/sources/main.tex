@@ -1,0 +1,250 @@
+% options:
+% thesis=B bachelor's thesis
+% thesis=M master's thesis
+% czech thesis in Czech language
+% english thesis in English language
+% hidelinks remove colour boxes around hyperlinks
+
+\documentclass[thesis=M,english]{FITthesis}[2012/10/20]
+
+\usepackage[utf8]{inputenc} % LaTeX source encoded as UTF-8
+% \usepackage[latin2]{inputenc} % LaTeX source encoded as ISO-8859-2
+% \usepackage[cp1250]{inputenc} % LaTeX source encoded as Windows-1250
+
+\usepackage{graphicx} %graphics files inclusion
+
+\usepackage{dirtree} %directory tree visualisation
+\usepackage{bbding}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{mdwlist} %multiline description labels
+\usepackage{cite}
+\usepackage{amsfonts}
+
+\usepackage{minted}
+\usemintedstyle{borland}
+\setminted[python]{frame=lines,framesep=10pt,breaklines}
+\setminted[gherkin]{frame=lines,framesep=10pt,breaklines}
+\setminted[applescript]{frame=lines,framesep=10pt,breaklines}
+\setminted[javascript]{frame=lines,framesep=10pt,breaklines}
+\setminted[text]{frame=lines,framesep=10pt,breaklines}
+
+\usepackage{algorithmic}
+\usepackage[vlined]{algorithm2e}
+\SetKwProg{alg}{Algorithm}{}{}
+\SetKwProg{on}{On}{}{}
+\SetKwProg{function}{Function}{}{}
+\SetKw{And}{and}
+\SetKwInOut{Input}{input}
+\SetKwInOut{Output}{output}
+
+\SetKwFunction{pp}{PP}
+\LinesNumbered
+
+\usepackage{amsmath}
+
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{capt-of}% or use the larger `caption` package
+
+\usepackage{color}
+\usepackage{array,graphicx}
+\usepackage{booktabs}
+\usepackage{pifont}
+
+\newcommand*\rot{\rotatebox{90}}
+\newcommand*\OK{\ding{51}}
+\newcommand*\NOK{\ding{55}}
+\definecolor{light-gray}{gray}{0.80}
+
+
+\newcommand{\customsubsubsection}[1] {
+  \subsubsection*{#1}
+  \addcontentsline{toc}{subsubsection}{\protect\numberline{}#1}%
+}
+
+\newcommand{\customparagraph}[1] {
+ \paragraph*{\textcolor{gray}{#1}}
+}
+
+
+% comments
+\usepackage{todonotes}
+\usepackage{xifthen}
+\newcommand{\dfnote}[2][]{%
+    {\color{olive}#1}%
+    \ifthenelse{\isempty{#2}{}}{}{\todo[color=green,inline]{[DF] #2}}%
+}
+
+% % list of acronyms
+% \usepackage[acronym,nonumberlist,toc,numberedsection=autolabel]{glossaries}
+% \iflanguage{czech}{\renewcommand*{\acronymname}{Seznam pou{\v z}it{\' y}ch zkratek}}{}
+% \makeglossaries
+
+
+\department{Department of Computer Science}
+\title{Online Planner for Food Deliveries}
+\authorGN{David} %author's given name/names
+\authorFN{Moko{\v s}} %author's surname
+\author{David Moko{\v s}} %author's name without academic degrees
+\authorWithDegrees{Bc. David Moko{\v s}} %author's name with academic degrees
+\supervisor{Ing. David Fiedler}
+\acknowledgements{
+    First and foremost, I would like to thank my thesis supervisor Ing. David Fiedler, for his patient guidance, advice, and encouragement he has provided while I was writing this thesis. His expertise hugely contributed to both the direction and the result of this work.
+
+    I take this opportunity to express gratitude to all department faculty members for their help and support throughout my studies. I also thank my partner Ing. Tereza Brany{\v s}ov{\' a} for endless encouragement, support, and attention.
+}
+\abstractEN{
+    The delivery services are rapidly gaining in popularity, which was further accelerated by the COVID-19 pandemic. Food delivery, especially, is a difficult problem, where it is necessary to minimize the delivery time to ensure customer satisfaction. Therefore, efficient route planning and order dispatching are essential. This problem of navigating a fleet of vehicles to serve a set of customers is referred to as the Vehicle Routing Problem (VRP), that has been tackled in the literature for several decades. However, real-life instances of VRP generally cannot be optimally solved in a reasonable time and thus, heuristic approaches need to be employed. In this thesis, we adopted a hybrid adaptive large neighborhood search algorithm originally proposed for people transportation and adapted it to the case of food delivery by introducing specific constraints and objectives. The experimental results show that our algorithm produces better solutions compared to several baselines. In addition, the experiments demonstrate the increased intensification and diversification power of our newly added components.
+}
+\abstractCS{
+    Využívání rozvozových služeb neustále nabývá na oblibě, čemuž v posledním roce napomohla i celosvětová pandemie COVID-19. Problematické jsou hlavně rozvážky v oblasti gastronomie, kdy je nezbytné minimalizovat dobu rozvozu, aby byla zajištěna spokojenost zákazníků. Za tímto účelem je nutné zaměřit se především na efektivní plánování tras pro kurýry. Tato problematika spadá pod Vehicle Routing Problem (VRP). V reálném světě však pro VRP nelze ve většině případů najít optimální řešení v přijatelném čase, a proto je třeba aplikovat heuristické metody. V této práci byl převzat hybridní adaptivní algoritmus, původně navržený pro přepravu osob, a přizpůsoben pro případ rozvozu jídla zavedením konkrétních omezení a cílů. Experimentální výsledky ukazují, že navržený algoritmus vytváří lepší řešení ve srovnání s jinými algoritmy. Výsledky navíc ukazují zvýšenou sílu intenzifikace a diverzifikace našich nově přidaných komponent. 
+}
+
+\placeForDeclarationOfAuthenticity{Prague}
+\keywordsCS{Doručování jídla, Problém vyzvednutí a doručení, Problém navigace vozidel, Operační výzkum}
+\keywordsEN{Food Delivery, Vehicle Routing Problem, Pickup and Delivery Problem, Operations Research}
+\declarationOfAuthenticityOption{1} %select as appropriate, according to the desired license (integer 1-6)
+% \website{http://site.example/thesis} %optional thesis URL
+
+\begin{document}
+
+\setsecnumdepth{part}
+\chapter{Introduction} \label{chapter:introduction}
+\input{introduction}
+
+\setsecnumdepth{all}
+\chapter{Literature Review} \label{chapter:literature}
+\input{literature_review}
+
+\chapter{Problem Definition} \label{chapter:problem}
+\input{problem}
+
+\chapter{Methodology} \label{chapter:methodology}
+\input{methodology}
+
+\chapter{Results} \label{chapter:results}
+\input{results}
+
+\setsecnumdepth{part}
+\chapter{Conclusion} \label{chapter:conclusion}
+\input{conclusion}
+
+\bibliographystyle{iso690}
+\bibliography{resources}
+
+\setsecnumdepth{all}
+\appendix
+
+\chapter{Acronyms}
+\begin{description}
+	
+	\item[ALNS] Adaptive Large Neighborhood Search
+	\item[API] Application Programming Interface
+	\item[ARP] Arc Routing Problem
+	\item[B\&B] Branch-and-Bound
+	\item[CVRP] Capacitated Vehicle Routing Problem
+	\item[DAFP] Dial-a-Flight Problem
+	\item[DARP] Dial-a-Ride Problem
+	\item[FSMVRP] Fleet Size and Mix Vehicle Routing Problem
+	\item[HALNS] Hybrid Adaptive Large Neighborhood Search
+	\item[HFVRP] Heterogenous Fleet Vehicle Routing Problem
+	\item[HFVRPTW] Heterogenous Fleet Vehicle Routing Problem with Time Windows
+	\item[HVRP] Heterogenous Vehicle Routing Problem
+	\item[PDP] Pickup and Delivery Problem
+	\item[PDPTW] Vehicle Routing Problem with Time Windows
+	\item[TSP] Travelling Salesman Problem
+	\item[VROOM] Vehicle Routing Open-source Optimization Machine
+	\item[VRP] Vehicle Routing Problem
+	\item[VRPPD] Vehicle Routing Problem with Pickup and Delivery
+	\item[VRPTW] Vehicle Routing Problem with Time Windows
+
+\end{description}
+
+
+\chapter{Contents of an enclosed CD}
+
+Also available via \url{https://github.com/davidmokos/halns}.
+
+\begin{figure}
+	\dirtree{%
+    	.1 README.md\DTcomment{the file with the instructions}.
+        .1 godeliver-planner\DTcomment{the folder with the GoDeliver Planner service}.
+		.1 halns\DTcomment{the HALNS implementation in Go language}.
+		.1 thesis\DTcomment{the directory with the thesis}.
+		.2 MT\_Mokos\_David\_2021.pdf\DTcomment{the thesis text in the PDF format}.
+        .2 sources\DTcomment{\LaTeX{} source codes of the thesis}.
+	}
+\end{figure}
+
+
+\chapter{Tables} \label{app:tables}
+\begin{table}[!ht]
+    \centering
+    {\renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{llllllllll}
+    \hline
+    \textbf{Instance} & \multicolumn{4}{l}{\textbf{Insertion Operators}}                        \\ \hline
+    \textbf{}         & \textbf{I1}       & \textbf{I2}        & \textbf{I3}       & \textbf{I4}\\ \hline
+    1                 & 2.23\,\%          & 46.88\,\%          & 4.32\,\%          & 46.57\,\%  \\
+    2                 & 12.56\,\%         & 41.48\,\%          & 6.85\,\%          & 39.11\,\%  \\
+    3                 & 11.68\,\%         & 43.46\,\%          & 2.24\,\%          & 42.61\,\%  \\
+    4                 & 1.84\,\%          & 48.54\,\%          & 2.17\,\%          & 47.45\,\%  \\
+    5                 & 7.24\,\%          & 46.08\,\%          & 2.29\,\%          & 44.40\,\%  \\
+    6                 & 4.58\,\%          & 41.37\,\%          & 11.84\,\%         & 42.21\,\%  \\
+    7                 & 3.98\,\%          & 46.53\,\%          & 1.45\,\%          & 48.04\,\%  \\
+    8                 & 8.90\,\%          & 44.18\,\%          & 5.04\,\%          & 41.88\,\%  \\
+    9                 & 8.13\,\%          & 42.97\,\%          & 4.54\,\%          & 44.36\,\%  \\
+    10                & 4.31\,\%          & 45.59\,\%          & 6.85\,\%          & 43.24\,\%  \\ \hline
+    \textbf{Average}  & \textbf{6.55\,\%} & \textbf{44.71\,\%} & \textbf{4.76\,\%} & \textbf{43.99\,\%}
+    \end{tabular}}
+    \caption{Percentage of use within 5 minutes of runtime of all insertion operators of HALNS algorithm.}
+    \label{tab:res-operator-percentage-insertion}
+    \end{table}
+
+
+    \begin{table}[!ht]
+    \centering
+    {\renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{llllllllll}
+    \hline
+    \textbf{Instance} & \multicolumn{5}{l}{\textbf{Removal Operators}}                                                        \\ \hline
+    \textbf{}         & \textbf{R1}       & \textbf{R2}        & \textbf{R3}        & \textbf{R4}        & \textbf{R5}        \\ \hline
+    1                 & 22.05\,\%         & 19.48\,\%          & 19.17\,\%          & 19.73\,\%          & 19.57\,\%          \\
+    2                 & 21.37\,\%         & 19.58\,\%          & 19.46\,\%          & 20.22\,\%          & 19.37\,\%          \\
+    3                 & 20.36\,\%         & 19.67\,\%          & 20.47\,\%          & 20.22\,\%          & 19.28\,\%          \\
+    4                 & 21.05\,\%         & 21.43\,\%          & 18.90\,\%          & 21.11\,\%          & 17.51\,\%          \\
+    5                 & 20.43\,\%         & 20.80\,\%          & 19.45\,\%          & 20.86\,\%          & 18.47\,\%          \\
+    6                 & 20.16\,\%         & 20.04\,\%          & 20.07\,\%          & 21.12\,\%          & 18.60\,\%          \\
+    7                 & 20.43\,\%         & 21.15\,\%          & 18.56\,\%          & 20.83\,\%          & 19.04\,\%          \\
+    8                 & 20.17\,\%         & 20.35\,\%          & 18.88\,\%          & 21.20\,\%          & 19.40\,\%          \\
+    9                 & 22.10\,\%         & 20.00\,\%          & 19.00\,\%          & 19.97\,\%          & 18.93\,\%          \\
+    10                & 20.82\,\%         & 21.44\,\%          & 19.39\,\%          & 19.48\,\%          & 18.88\,\%          \\ \hline
+    \textbf{Average}  &\textbf{20.89\,\%} & \textbf{20.39\,\%} & \textbf{19.33\,\%} & \textbf{20.48\,\%} & \textbf{18.91\,\%}
+    \end{tabular}}
+    \caption{Percentage of use within 5 minutes of runtime of all removal operators of HALNS algorithm.}
+    \label{tab:res-operator-percentage-removal}
+    \end{table}
+    
+    \begin{table}[!ht]
+    \centering
+    {\renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{llllll}
+    \hline
+               & \multicolumn{5}{l}{\textbf{Insertion Operators}}                    \\
+    Operator   & \textbf{I1} & \textbf{I2} & \textbf{I3} & \textbf{I4} & \textbf{}   \\ \hline
+    Percentage & 2.82\,\%    & 25.33\,\%   & 2.21\,\%    & \textbf{69.64}\,\%   &             \\
+    \multicolumn{6}{l}{}                                                             \\ \hline
+               & \multicolumn{5}{l}{\textbf{Removal Operators}}                      \\
+    Operator   & \textbf{R1} & \textbf{R2} & \textbf{R3} & \textbf{R4} & \textbf{R5} \\ \hline
+    Percentage & 10.02\,\%   & 12.2\,\%    & \textbf{31.38}\,\%   & 29.98\,\%   & 16.42\,\%  
+    \end{tabular}}
+    \caption{Percentage of CPU used by each operator of HALNS algorithm within 5 minutes of runtime.}
+    \label{tab:operators-cpu}
+    \end{table}
+
+
+
+\end{document}
+
+

@@ -1,0 +1,2 @@
+class PlanUnfeasibleException(Exception):
+    pass

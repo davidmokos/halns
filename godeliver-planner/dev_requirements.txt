@@ -1,0 +1,5 @@
+plotly
+pandas
+googlemaps
+firebase-admin
+streamlit

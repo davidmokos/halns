@@ -1,0 +1,33 @@
+# flask
+flask
+flask-restful
+flask-cors
+flask-restful-swagger-2
+
+# config
+PyYAML
+
+requests
+
+# hexagons
+h3
+
+# pojo
+pydantic
+
+# optimization
+ortools
+scipy
+
+# DI
+pinject
+
+# server
+gunicorn
+
+aiohttp
+chardet==3.0.4
+
+numpy
+
+haversine

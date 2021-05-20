@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "godeliver-benchmarking",
+  "private_key_id": "804655016298bd5b86ca146e2b4a4bfb587f4696",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8WAszyuNtSmpg\nbGmhZKdmbPMxzJ0MzJ2UQfzCndYsyDO6U1KBv+NdAooQJ7FDKQvTUBd12lg5fA53\nS1KbXZVkRxxFVDY3kVVosqHUlfcly6AwjjqXdWeoXjNmXdmGJ3QjhMvpofcaZ/Ic\njQU45oNDKhBd1RqfkUIjxdJSBelxl4YI3l+HmWy6QO/z7fcZ+XchlU/xJUYOXhHc\nna3rFDY1p2ra1sOobdEZWKU8g454Ryr2SttOBgdc6qhA6UhLTLnIPKh7At3dWOy7\nWlIt+PA1SCVHztlvaFCsqpY6Nnzz7qfpHiFL8NiqHN1GntTZi2xeq0hQ/DQrHdlz\nRLZ0yI5bAgMBAAECggEAMoJsEqo0/qDH0W8RjupG6HWMbM0CSyXulo1xwyGACAdy\ns+PXixtSVqWxL+7tH2U5GiTu/bieE2B9IqntD+RzhW56mu8gERvlK0xIkRHcs2Kd\n5ZenB+pA78q/fxLpHIylHUdmRhQdCBRbPiPlhCJxjkgQFpHpb2SNt7k8E6opNkBm\nNkjeZQoVjyRDzXIAZD1Dd7Fn7BiJeAtQe4od3PbBgkARKRHyYgQAk3P5Qd4saBXr\nCPCGcmGEyeEBgQupDFOB88f6WOEKEucOg/2S08YDoX+Lmbli4qcZcD7FG/Q69ics\nMTO6nTU8JxcZh11tC3Y1zpA8Oby832dcT0CNDhJD2QKBgQDdvRJU4asg1vQXqk60\n2YO7bttMLrMg1YcZsKqaFABoaN0rehp6anKI4IYgrSKG69tVeA/0+cZ5MtAWicBh\nVinY2ZGqwBo6GNnENJ8CtwnNOHpfrAX8rkCjdXDm7V5ttQ2xHA63sw/rgqsFuJyR\nnu7LbCpf7TwfGTGnfcunaYCDKQKBgQDZcgnGnOwYd7LKjms9Wq0LJcagfnuXH/bw\n2OTvgxUULJhTJ/ilrUIVtWq4J3mzKH7ent76IBMGgg3+Tzz47o8a8YJfatIbcp7v\nRIlSz0UzHm76CLFaBOwZ+ReYhfzYtpXUOUrBhi2s3Q3H7vk7sVzOFvuZFkD+pN2Y\n4PHMAsNZ4wKBgBzE5jb7HI/jM8JKR3HxcsUDyhIlUPpmmeO8ZzYceD0TtfZpHjxZ\nyUh3EQ/2Rq+ItGlvbWqUaarZ6+OwtbQrULyg5eRojj6RcNejGCprAyuMM1xsXk59\ncUeD+kUL8R98ySz8ffBZnCwrRPM2E6JVI5hjDVBq4E0MoMOhb6Xl61WZAoGATfo1\nQ0JW8FdMiJMWJgR0dcDwP/HbxFA0MB63yqSJVJjBb2CwLEm7nylVwgB2BieJh7AV\nakFCUV0mQ4KK7QIv04u0Ix+dhTZPhKJhVI77098gEQ44+300ZgQL0CiMifLAPEDn\nbAsAKjODk6VBP4TVMRrQ0w9F84uP5BkW3QBIqd0CgYEAyahlmrmq1koxhIl3LNCE\n2GxZcd9HOo17Awpb8giQfPcAXWFWoQJ9Q/l6iag5xTEZnZ0dAUXFz4NlzBf5ktt7\nCqcBEVVYkYsLCsICZ33V3lVTUa/TZ5Ai3iiiNS1RUKNksXuwhcL7LZ0+PmNEu7IB\nweLaHXytTD75t8BaasFuPAg=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-1lyqm@godeliver-benchmarking.iam.gserviceaccount.com",
+  "client_id": "107000028563732212036",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-1lyqm%40godeliver-benchmarking.iam.gserviceaccount.com"
+}
