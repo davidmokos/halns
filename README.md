@@ -45,7 +45,7 @@ pip install -r dev_requirements.txt
 cd godeliver-planner/benchmarking/evaluation/benchmark_evaluator.py
 ```
 
-* Run the `run_benchmarking()` function to execute all planning algorithms against the evaluation dataset. With every produced solution, the visualization of the solution should automatically open as a new browser window. Also, the metrics are automatically pushed to our Firestore database.
+* Run the `run_benchmarking()` function to execute all planning algorithms against the evaluation dataset. With every produced solution, the visualization of the solution should automatically open as a new browser window. Also, the metrics are automatically pushed to our Firestore database. To properly work with Firestore, you need to put your Firebase private key into `godeliver-planner/config/godeliver-benchmarking-firebase-key.json`. To try our, please contact me.
 
 * To visualize the metrics uploaded to the Firestore database, run the following command from your virtual environment:
 ```bash
